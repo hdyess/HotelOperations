@@ -22,7 +22,21 @@ public class Main {
             System.out.println(r);
         }
 
+        ArrayList<Reservation> reservations = new ArrayList<>();
 
+        Reservation res1 = new Reservation("king", 2, false);
+        Reservation res2 = new Reservation("king", 2, false);
+        Reservation res3 = new Reservation("king", 2, false);
+        Reservation res4 = new Reservation("king", 2, false);
+
+        reservations.add(res1);
+        reservations.add(res2);
+        reservations.add(res3);
+        reservations.add(res4);
+
+        for (Reservation r : reservations) {
+            System.out.println(r);
+        }
 
     }// closes main method
 }// closes main class
