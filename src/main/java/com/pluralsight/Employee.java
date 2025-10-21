@@ -79,16 +79,6 @@ public class Employee {
 
 
     // punching
-    private double punchInTime = 0;
-
-    public void punchIn(double time) {
-        this.punchInTime = time;
-    }
-
-    public void punchOut(double time) {
-        this.hoursWorked += (time - this.punchInTime);
-    }
-
     public void punchTimeCard(double checkInTime, double checkOutTime) {
         this.hoursWorked += (checkOutTime - checkInTime);
     }
