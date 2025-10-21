@@ -57,10 +57,10 @@ public class Main {
 
         ArrayList<Employee> employees = new ArrayList<>();
 
-        Employee emp1 = new Employee(1, "Matt", "IT", 23, 38);
-        Employee emp2 = new Employee(2, "Dave", "HR", 25, 40);
-        Employee emp3 = new Employee(3, "Kate", "Front Desk", 19, 41);
-        Employee emp4 = new Employee(4, "Alex", "Housekeeping", 18, 32);
+        Employee emp1 = new Employee(1, "Matt", "IT", 23, 0);
+        Employee emp2 = new Employee(2, "Dave", "HR", 25, 0);
+        Employee emp3 = new Employee(3, "Kate", "Front Desk", 19, 0);
+        Employee emp4 = new Employee(4, "Alex", "Housekeeping", 18, 0);
 
         employees.add(emp1);
         employees.add(emp2);
@@ -70,8 +70,6 @@ public class Main {
         for (Employee e : employees) {
             System.out.println(e);
         }
-
-
 
     }// closes main method
 }// closes main class

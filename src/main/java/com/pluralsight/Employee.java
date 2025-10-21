@@ -1,5 +1,11 @@
 package com.pluralsight;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 public class Employee {
 
     // fields
@@ -79,13 +85,43 @@ public class Employee {
 
 
     // punching
+    /*
     public void punchTimeCard(double checkInTime, double checkOutTime) {
         this.hoursWorked += (checkOutTime - checkInTime);
     }
+    */
 
-    public void logHours(double hours) {
-        this.hoursWorked += hours;
+    //private int punchTimeHours;
+    //private int punchTimeMinutes;
+
+    private double punchTime;
+
+    public void punchIn() {
+        //this.punchTimeHours = LocalDateTime.now().getHour();
+        //this.punchTimeMinutes = LocalDateTime.now().getMinute();
+
+        LocalDateTime lt = LocalDateTime.now();
+        this.punchTime = ((double)lt.getHour() + ((double)lt.getMinute()/60));
     }
+
+    public void punchIn(double time) {
+        //punchTimeHours = (int)time;
+        //punchTimeMinutes = (int)(60*(time-((int)time)));
+
+        this.punchTime = time;
+    }
+
+    public void punchOut() {
+        LocalDateTime lt = LocalDateTime.now();
+        this.hoursWorked += this.punchTime-((double)lt.getHour() + ((double)lt.getMinute()/60));
+    }
+
+    public void punchOut(double time) {
+        this.hoursWorked += time-this.punchTime;
+    }
+
+
+
 
 
     // overrides?
