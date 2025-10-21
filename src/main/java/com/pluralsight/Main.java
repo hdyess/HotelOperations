@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class Main {
@@ -18,9 +19,24 @@ public class Main {
         rooms.add(r103);
         rooms.add(r104);
 
+        System.out.println("rooms have 2 checked out");
+
+        r101.checkIn();
+        r102.checkIn();
+
         for (Room r: rooms) {
             System.out.println(r);
         }
+
+        r102.checkOut();
+
+        System.out.println("one room checked out");
+
+        for (Room r : rooms) {
+            System.out.println(r);
+        }
+
+
 
         ArrayList<Reservation> reservations = new ArrayList<>();
 
@@ -37,6 +53,25 @@ public class Main {
         for (Reservation r : reservations) {
             System.out.println(r);
         }
+
+
+        ArrayList<Employee> employees = new ArrayList<>();
+
+        Employee emp1 = new Employee(1, "Matt", "IT", 23, 38);
+        Employee emp2 = new Employee(2, "Dave", "HR", 25, 40);
+        Employee emp3 = new Employee(3, "Kate", "Front Desk", 19, 41);
+        Employee emp4 = new Employee(4, "Alex", "Housekeeping", 18, 32);
+
+        employees.add(emp1);
+        employees.add(emp2);
+        employees.add(emp3);
+        employees.add(emp4);
+
+        for (Employee e : employees) {
+            System.out.println(e);
+        }
+
+
 
     }// closes main method
 }// closes main class
