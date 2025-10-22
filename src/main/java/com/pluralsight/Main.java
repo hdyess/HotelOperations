@@ -71,5 +71,10 @@ public class Main {
             System.out.println(e);
         }
 
+        emp1.punchIn(12.50);
+        emp1.punchOut(16.75);
+
+
+
     }// closes main method
 }// closes main class

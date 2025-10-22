@@ -1,10 +1,7 @@
 package com.pluralsight;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+
 
 public class Employee {
 
@@ -17,7 +14,6 @@ public class Employee {
 
 
     // constructors
-
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
         this.name = name;
@@ -28,7 +24,6 @@ public class Employee {
 
 
     // getters setters
-
     public int getEmployeeId() {
         return employeeId;
     }
@@ -85,29 +80,14 @@ public class Employee {
 
 
     // punching
-    /*
-    public void punchTimeCard(double checkInTime, double checkOutTime) {
-        this.hoursWorked += (checkOutTime - checkInTime);
-    }
-    */
-
-    //private int punchTimeHours;
-    //private int punchTimeMinutes;
-
     private double punchTime;
 
     public void punchIn() {
-        //this.punchTimeHours = LocalDateTime.now().getHour();
-        //this.punchTimeMinutes = LocalDateTime.now().getMinute();
-
         LocalDateTime lt = LocalDateTime.now();
         this.punchTime = ((double)lt.getHour() + ((double)lt.getMinute()/60));
     }
 
     public void punchIn(double time) {
-        //punchTimeHours = (int)time;
-        //punchTimeMinutes = (int)(60*(time-((int)time)));
-
         this.punchTime = time;
     }
 
@@ -121,11 +101,19 @@ public class Employee {
     }
 
 
+    // override
+    @Override
+    public String toString() {
 
+        return "Employee{" +
+                "employeeID=" + this.employeeId +
+                ", name=" + this.name +
+                ", department=" + this.department +
+                ", payRate=" + this.payRate +
+                ", hoursWorked=" + this.hoursWorked +
+                "}";
 
-
-    // overrides?
-
+    }
 
 
 } // closes Employee class
